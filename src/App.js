@@ -33,13 +33,14 @@ class App extends Component {
                 to="/users">Users</NavLink></li>
             </ul>
           </nav>
-          <Redirect from="/all-courses" to="/courses" />
 
           <Switch>
                     <Route path="/users" component={Users} />
                     <Route path="/courses" component={Courses} />
-                    <Route path="/course/:id" component={Courses} />
                     <Route path="/" exact component={Courses} />
+
+                    <Redirect from="/all-courses" to="/courses" />
+                    
                     <Route render={() => <h1>Page not found</h1>} />
           </Switch>
           </div>
